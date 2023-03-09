@@ -49,7 +49,7 @@ module.exports = () => {
       //   ],
       // }),
 
-      WebpackPwaManifest()
+      new WebpackPwaManifest()
     ],
 
     module: {
