@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'J.A.T.E.'
+        title: 'JATE.'
       }),
 
       // Injects our custom service worker
@@ -38,8 +38,8 @@ module.exports = () => {
         description: 'Edit your text!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        // start_url: './',
+        // publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
