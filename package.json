@@ -9,7 +9,7 @@
   "scripts": {
     "start:dev": "concurrently \" cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server node server/server.js --ignore client",
+    "server": "cd server node server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
@@ -19,8 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "workbox-webpack-plugin": "^6.5.4"
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -28,10 +27,7 @@
     "babel-loader": "^9.1.2",
     "concurrently": "^5.2.0",
     "css-loader": "^6.7.3",
-    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.4",
-    "style-loader": "^3.3.1",
-    "webpack-cli": "^5.0.1",
-    "webpack-pwa-manifest": "^4.3.0"
+    "style-loader": "^3.3.1"
   }
 }
