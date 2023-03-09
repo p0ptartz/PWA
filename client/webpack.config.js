@@ -16,6 +16,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      publicPath: '/server/'
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -30,24 +31,24 @@ module.exports = () => {
       }),
 
       // Creates a manifest.json file.
-      // new WebpackPwaManifest({
-      //   fingerprints: false,
-      //   inject: true,
-      //   name: 'J.A.T.E.',
-      //   short_name: 'TextEdit',
-      //   description: 'Edit your text!',
-      //   background_color: '#225ca3',
-      //   theme_color: '#225ca3',
-      //   // start_url: './',
-      //   // publicPath: './',
-      //   icons: [
-      //     {
-      //       src: path.resolve('src/images/logo.png'),
-      //       sizes: [96, 128, 192, 256, 384, 512],
-      //       destination: path.join('assets', 'icons'),
-      //     },
-      //   ],
-      // }),
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'J.A.T.E.',
+        short_name: 'TextEdit',
+        description: 'Edit your text!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
 
       new WebpackPwaManifest()
     ],
