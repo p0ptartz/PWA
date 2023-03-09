@@ -1,15 +1,15 @@
 {
   "name": "JATE",
   "version": "1.0.0",
-  "engines": {
-    "node": "18.x"
-  },
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "18.13.0"
+  },
   "scripts": {
-    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start:dev": "concurrently \" cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server nodemon server.js --ignore client",
+    "server": "cd server node server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
@@ -22,7 +22,12 @@
     "if-env": "^1.0.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "css-loader": "^6.7.3",
+    "nodemon": "^2.0.4",
+    "style-loader": "^3.3.1"
   }
 }
